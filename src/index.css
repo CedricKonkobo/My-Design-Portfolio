@@ -1,0 +1,403 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Designer Graphique - Design System
+Palette: Blanc élégant & Déclinaisons de bleu
+Animations: Fluides et professionnelles
+*/
+
+@layer base {
+  :root {
+    /* Hero Section - Original Palette (keep unchanged) */
+    --hero-background: 0 0% 100%; /* Blanc pur */
+    --hero-foreground: 220 100% 16%; /* Bleu nuit #001F54 */
+
+    /* Post-Hero Sections - Modern Dark Theme */
+    --background: 222 84% 5%; /* Fond sombre #0B0B0B */
+    --background-alt: 223 47% 11%; /* Bleu nuit #0A0F1C */
+    --foreground: 210 20% 90%; /* Gris clair #E5E7EB */
+
+    --card: 222 84% 8%; /* Cards légèrement plus claires */
+    --card-foreground: 210 20% 90%;
+
+    --popover: 222 84% 8%;
+    --popover-foreground: 210 20% 90%;
+
+    /* Système de bleus modernes */
+    --primary: 217 91% 60%; /* Bleu clair lumineux #3B82F6 */
+    --primary-foreground: 222 84% 5%; /* Sombre */
+
+    --secondary: 213 93% 68%; /* Bleu ciel #60A5FA */
+    --secondary-foreground: 222 84% 5%;
+
+    --accent: 217 91% 60%; /* Bleu accent */
+    --accent-foreground: 222 84% 5%;
+
+    --blue-medium: 214 81% 63%; /* Bleu moyen #4A90E2 */
+    --blue-overlay: 220 100% 16%; /* Overlay transparent */
+
+    --muted: 214 100% 95%;
+    --muted-foreground: 220 50% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 100% 90%;
+    --input: 214 100% 90%;
+    --ring: 214 100% 60%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-overlay: linear-gradient(135deg, hsl(220 100% 16% / 0.3), hsl(220 100% 16% / 0.1));
+    --gradient-blue: linear-gradient(135deg, hsl(217 91% 60%), hsl(213 93% 68%));
+    --gradient-dark: linear-gradient(135deg, hsl(222 84% 5%), hsl(223 47% 11%));
+    --shadow-blue: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    --shadow-blue-hover: 0 20px 40px -10px hsl(217 91% 60% / 0.4);
+    --glow-blue: 0 0 40px hsl(217 91% 60% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Hero Section Animations - Elegant & Professional */
+  @keyframes heroBgFadeZoom {
+    from {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes heroTextSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroCtaPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes heroArrowBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  /* Work Section Animations */
+  @keyframes workFadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes workSliderScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Contact & Footer Animations */
+  @keyframes sectionFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes iconFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Legacy animations for compatibility */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Hero Animation Classes */
+  .hero-bg {
+    will-change: transform, opacity;
+  }
+
+  .hero-headline,
+  .hero-name,
+  .hero-location,
+  .hero-cta,
+  .hero-arrow {
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  /* Animation Triggers */
+  .is-animated .hero-bg {
+    animation: heroBgFadeZoom 2s ease-in-out forwards;
+  }
+
+  .is-animated .hero-headline {
+    animation: heroTextSlideUp 1s ease-in-out 0.5s forwards;
+  }
+
+  .is-animated .hero-name {
+    animation: heroTextSlideUp 1s ease-in-out 0.8s forwards;
+  }
+
+  .is-animated .hero-location {
+    animation: heroTextSlideUp 1s ease-in-out 1.1s forwards;
+  }
+
+  .is-animated .hero-cta {
+    animation: heroTextSlideUp 1s ease-in-out 1.4s forwards,
+               heroCtaPulse 3s ease-in-out 2.4s infinite;
+  }
+
+  .is-animated .hero-arrow {
+    animation: heroTextSlideUp 1s ease-in-out 1.7s forwards,
+               heroArrowBounce 2s ease-in-out 2.7s infinite;
+  }
+
+  /* Work Section Animation Classes */
+  .work-grid-item {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .work-grid-item.animate-in {
+    animation: workFadeInZoom 1.2s ease-in-out forwards;
+  }
+
+  .work-grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px -10px hsl(214 100% 60% / 0.3);
+  }
+
+  .work-slider {
+    animation: workSliderScroll 25s linear infinite;
+  }
+
+  .work-slider.animate-in {
+    animation: workSliderScroll 25s linear infinite;
+  }
+
+  .work-slider:hover {
+    animation-play-state: paused;
+  }
+
+  /* Contact Section Animation Classes */
+  .contact-icon {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .contact-icon.animate-in {
+    animation: iconFadeIn 1s ease-in-out forwards;
+  }
+
+  .contact-text {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .contact-text.animate-in {
+    animation: sectionFadeInUp 1s ease-in-out forwards;
+  }
+
+  /* Work Section Animation Classes */
+  .work-grid-item.animate-in,
+  .contact-text.animate-in,
+  .footer-content.animate-in,
+  .text-center.animate-in {
+    animation: sectionFadeInUp 1.2s ease-in-out forwards;
+  }
+
+  /* Footer Animation Classes */
+  .footer-content {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .footer-content.animate-in {
+    animation: sectionFadeInUp 1.2s ease-in-out forwards;
+  }
+
+  /* Accessibility: Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg {
+      animation: fadeIn 1s ease-in-out forwards !important;
+    }
+    
+    .is-animated .hero-headline,
+    .is-animated .hero-name,
+    .is-animated .hero-location,
+    .is-animated .hero-cta,
+    .is-animated .hero-arrow {
+      animation: fadeIn 1s ease-in-out forwards !important;
+    }
+    
+    .work-grid-item.animate-in {
+      animation: fadeIn 1s ease-in-out forwards !important;
+    }
+    
+    .contact-icon.animate-in,
+    .contact-text.animate-in,
+    .footer-content.animate-in {
+      animation: fadeIn 1s ease-in-out forwards !important;
+    }
+    
+    /* Disable infinite animations for reduced motion */
+    .is-animated .hero-cta,
+    .is-animated .hero-arrow,
+    .work-slider {
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  /* Utility classes for progressive delays */
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-800 { animation-delay: 0.8s; }
+  .delay-1100 { animation-delay: 1.1s; }
+  .delay-1400 { animation-delay: 1.4s; }
+  .delay-1700 { animation-delay: 1.7s; }
+
+  /* Classes utilitaires */
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  .animate-bounce-infinite {
+    animation: bounce 1.5s infinite;
+  }
+
+  .animate-infinite-scroll {
+    animation: infiniteScroll 15s linear infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-900 { animation-delay: 0.9s; }
+  .delay-1200 { animation-delay: 1.2s; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Modern geometric background for post-hero sections */
+  .dark-section {
+    position: relative;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-alt)));
+  }
+
+  .dark-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, hsl(217 91% 60% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(213 93% 68% / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsl(217 91% 60% / 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .geometric-bg::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: hsl(217 91% 60% / 0.1);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+  }
+}
