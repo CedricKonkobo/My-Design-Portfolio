@@ -6,6 +6,7 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 import project7 from "@/assets/project-7.jpg";
+import project8 from "@/assets/projet-8.jpg";
 
 const projects = [
   { id: 1, image: project1, title: "Branding Corporate" },
@@ -15,6 +16,7 @@ const projects = [
   { id: 5, image: project5, title: "Packaging" },
   { id: 6, image: project6, title: "Web Design" },
   { id: 7, image: project7, title: "Web Design" },
+  { id: 8, image: project8, title: "Web Design" },
 ];
 
 const WorkSlider = () => {

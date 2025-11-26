@@ -6,6 +6,7 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 import project7 from "@/assets/project-7.jpg";
+import project8 from "@/assets/projet-8.jpg";
 
 const projects = [
   { 
@@ -47,6 +48,12 @@ const projects = [
   { 
     id: 7, 
     image: project7, 
+    title: "Package Design",
+    description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
+  },
+  { 
+    id: 8, 
+    image: project8, 
     title: "Package Design",
     description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
   },
