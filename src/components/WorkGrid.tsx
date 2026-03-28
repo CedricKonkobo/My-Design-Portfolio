@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.png";
-import project3 from "@/assets/project-3.png";
+import project2 from "@/assets/project-2.jpg";
+import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
-import project6 from "@/assets/project-6.jpg";
+import project5 from "@/assets/project-5.png";
+import project6 from "@/assets/project-6.png";
 import project7 from "@/assets/project-7.jpg";
-import project8 from "@/assets/projet-8.jpg";
+import project8 from "@/assets/project-8.jpg";
+import project9 from "@/assets/project-9.jpg";
+import project10 from "@/assets/project-10.jpg";
+import project11 from "@/assets/project-11.jpg";
 
 const projects = [
   { 
@@ -21,6 +24,7 @@ const projects = [
     title: "Branding Package",
     description: "Package complet de branding avec cartes de visite, papeterie et supports de communication cohérents."
   },
+
   { 
     id: 3, 
     image: project3, 
@@ -54,6 +58,24 @@ const projects = [
   { 
     id: 8, 
     image: project8, 
+    title: "Package Design",
+    description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
+  },
+   { 
+    id: 9, 
+    image: project9, 
+    title: "Package Design",
+    description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
+  },
+   { 
+    id: 10, 
+    image: project10, 
+    title: "Package Design",
+    description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
+  },
+   { 
+    id: 11, 
+    image: project11, 
     title: "Package Design",
     description: "Design packaging premium alliant esthétique moderne et fonctionnalité pour valoriser le produit."
   },

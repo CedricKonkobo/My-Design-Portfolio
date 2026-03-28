@@ -30,7 +30,7 @@ const Footer = () => {
         <div className={`footer-content ${isVisible ? 'animate-in' : ''}`}>
           {/* Main Footer Text */}
           <p className="font-roboto text-lg mb-4">
-            © 2025 Alexandre Dubois — Portfolio. Tous droits réservés.
+            © 2025 Cedric Konkobo — Portfolio. Tous droits réservés.
           </p>
           
           {/* Subtitle */}
